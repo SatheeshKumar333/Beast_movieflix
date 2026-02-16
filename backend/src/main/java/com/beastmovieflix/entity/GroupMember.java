@@ -4,15 +4,11 @@ import jakarta.persistence.*;
 import lombok.*;
 import java.time.LocalDateTime;
 
-/**
- * GroupMember Entity - Represents a user's membership in a group
- * 
- * @author Satheesh Kumar
- */
 @Entity
-@Table(name = "group_members", uniqueConstraints = {
-        @UniqueConstraint(columnNames = { "group_id", "user_id" })
-})
+@Table(name = "group_members",
+       uniqueConstraints = {
+           @UniqueConstraint(columnNames = {"group_id", "user_id"})
+       })
 @Getter
 @Setter
 @NoArgsConstructor
@@ -46,6 +42,7 @@ public class GroupMember {
     }
 
     public enum Role {
-        ADMIN, MEMBER
+        ADMIN,
+        MEMBER
     }
 }
